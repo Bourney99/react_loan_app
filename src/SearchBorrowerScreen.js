@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import './SearchBorrowerScreen.css';
 import BorrowerForm from './BorrowerForm'
 
 
 function SearchBorrowerScreen(props){
-
-
+    const [borrowerData, setBorrowerData] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
     const [id, setId] = useState('')
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('')
     const [searchedBorrower, setSearchedBorrower] = useState('')
-    const [borrowerList, setBorrowerList] = useState(() => {
-    fetch('/borrower_list').then(res => res.json()).then(data => {
-      setBorrowerList(data.borrowers);
-    })
-    }
 
-    , []);
+//    const [borrowerList, setBorrowerList] = useState(() => {
+//    fetch('/borrower_list').then(res => res.json()).then(data => {
+//      setBorrowerList(data.borrowers);
+//    })
+//    }
+//
+//    , []);
+
+//    useEffect(() => {
+//        fetch('/borrower_list', {
+//        method: 'GET'
+//        }).then((response) => console.log(response));
+//
+//    }, []);
 
 function handleSubmit(borrower){
         //console.log(borrower)
@@ -55,6 +64,7 @@ function handleSubmit(borrower){
   const handleOnSelect = (e) => {
     // the item selected
 //    console.log(e)
+console.log('ehat')
     setSearchedBorrower(e)
     setId(e.id)
     setName(e.name)
