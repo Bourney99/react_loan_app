@@ -49,7 +49,7 @@ function handleSubmit(borrower){
   }).then(json => {
   })
 
-    console.log('Borrower updated')
+    console.log('Borrower updated by gb')
     setBorrowerList(() => {
     fetch('/borrower_list').then(res => res.json()).then(data => {
       setBorrowerList(data.borrowers);
@@ -64,7 +64,7 @@ function handleSubmit(borrower){
   const handleOnSelect = (e) => {
     // the item selected
 //    console.log(e)
-console.log('ehat')
+    console.log('ehat')
     setSearchedBorrower(e)
     setId(e.id)
     setName(e.name)
