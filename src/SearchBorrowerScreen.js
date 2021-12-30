@@ -49,7 +49,7 @@ function handleSubmit(borrower){
   }).then(json => {
   })
 
-    console.log('Borrower updated by gb')
+    console.log('Borrower updated by gb2')
     setBorrowerList(() => {
     fetch('/borrower_list').then(res => res.json()).then(data => {
       setBorrowerList(data.borrowers);
