@@ -16,6 +16,7 @@ borrower_id = 1
 @app.route('/borrower_list')
 def get_borrower_list():
     # return {'time': time.time()}
+
     return {'borrowers': borrowers}
 
 
